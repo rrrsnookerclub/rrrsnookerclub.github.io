@@ -433,30 +433,20 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
 
   let whatsappURL = `https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`;
 
-  // Stylish popup
-  let popup = document.createElement("div");
-  popup.innerHTML = "✅ Booking Confirmed! WhatsApp open ho raha hai...";
-  popup.style.cssText = `
-    position:fixed;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%);
-    background:#00ff88;
-    color:#000;
-    padding:15px 25px;
-    border-radius:12px;
-    font-weight:bold;
-    box-shadow:0 0 20px #00ff88;
-    z-index:9999;
-  `;
-
-  document.body.appendChild(popup);
-
-  setTimeout(() => popup.remove(), 3000);
-
-  window.open(whatsappURL, "_blank");
-});
-
+  // Stylish popup - center me
+	let popup = document.creatElement('div');
+	popup.innerText = "Booking Confirmed";
+	popup.style.cssText=";
+"position:fixed;top:50%;left:50%;transform
+:translate(-50%,-50%);background:#22c55e;color:white;padding:15px 25px;border-
+radius:10px;font-size:18px;font-weight:bold;z-index:9999;";
+		document.body.appendChild(popup);
+	
+setTimeout(function(){
+	popup.remove();
+	window.location.href="https://wa.me/923147637998";
+}, 4000);
+					 
 </script>
 
 </body>
