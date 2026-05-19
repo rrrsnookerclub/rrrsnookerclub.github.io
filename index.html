@@ -390,7 +390,7 @@
 	  decoration:none;">03147637998</a>
     </p>
 </footer>
-<script>
+	<script>
 
 function scrollToBooking() {
   document.getElementById("booking").scrollIntoView({
@@ -433,20 +433,36 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
 
   let whatsappURL = `https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`;
 
-  // Stylish popup - center me
-	let popup = document.creatElement('div');
-	popup.innerText = "Booking Confirmed";
-	popup.style.cssText =
-"position:fixed;top:50%;left:50%;transform
-:translate(-50%,-50%);background:#22c55e;color:white;padding:15px 25px;border-
-radius:10px;font-size:18px;font-weight:bold;z-index:9999;";
-		document.body.appendChild(popup);
-	
-setTimeout(function(){
-	popup.remove();
-	window.location.href="https://wa.me/923147637998";
-}, 4000);
-					 
+  // ✅ FIXED POPUP
+  let popup = document.createElement('div');
+
+  popup.innerText = "Booking Confirmed ✅";
+
+  popup.style.cssText = `
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #22c55e;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 9999;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  `;
+
+  document.body.appendChild(popup);
+
+  // ✅ WhatsApp redirect after popup
+  setTimeout(function(){
+    popup.remove();
+    window.location.href = whatsappURL; // IMPORTANT FIX
+  }, 3000);
+
+});
+
 </script>
 
 </body>
